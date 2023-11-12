@@ -1,0 +1,8 @@
+.block-container {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #2e3e3e;
+    /* Add any other styles you want to apply to the block-container class */
+  }
