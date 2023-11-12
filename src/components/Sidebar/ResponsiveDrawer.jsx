@@ -75,7 +75,7 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
     return (
         <>
         <CssBaseline />
-        <AppBar position="fixed" open={open}>
+        <AppBar position="fixed" open={open} sx={{ backgroundColor: 'rgb(251, 251, 250)' }}>
             <Toolbar>
             <IconButton
                 color="inherit"
@@ -86,8 +86,8 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
             >
                 <Menu />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-                Your Pages
+            <Typography variant="h6" noWrap component="div" sx={{ color: 'black' }}>
+                Real time Editor
             </Typography>
             </Toolbar>
         </AppBar>
@@ -98,6 +98,7 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
             '& .MuiDrawer-paper': {
                 width: drawerWidth,
                 boxSizing: 'border-box',
+                backgroundColor: 'rgb(251, 251, 250)',
             },
             }}
             variant="persistent"
@@ -112,12 +113,13 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
             <Divider />
             <Stack variant='column' height='100%' m={2}>
                 <Stack direction={'row'}>
-                    <Input
-                        placeholder='Enter page name'
-                        value={newPageName}
-                        onChange={(e) => setNewPageName(e.target.value)}
-                    />
-                    <IconButton color='primary' onClick={handleAddPage}>
+                <Input
+                    placeholder='Enter page name'
+                    value={newPageName}
+                    onChange={(e) => setNewPageName(e.target.value)}
+                    style={{ color: 'black' }}
+                />
+                    <IconButton style={{ color: 'black' }} onClick={handleAddPage}>
                         <AddIcon />
                     </IconButton>
                 </Stack>
@@ -126,7 +128,7 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
                     <Link
                         key={page.id}
                         to={`${page.id}`}
-                        style={{ textDecoration: 'blue' }}
+                        style={{ textDecoration: 'black' }}
                     >
                         {page.title}
                     </Link>
