@@ -8,7 +8,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import MuiAppBar from '@mui/material/AppBar';
 import { Menu } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { usePages } from '../contexts/PagesContext';
 
@@ -48,6 +48,7 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
     const bottomRef = useRef();
     const theme = useTheme();
     const navigate = useNavigate()
+    const location = useLocation()
 
     const loadPages = () => {
 
@@ -128,7 +129,12 @@ export default function PersistentDrawerLeft({open, handleDrawerClose, handleDra
                     <Link
                         key={page.id}
                         to={`${page.id}`}
-                        style={{ textDecoration: 'black' }}
+                        style={{ 
+                            textDecoration: 'black', 
+                            color:'black' ,
+                            backgroundColor:location.pathname === `/${page.id}` ? 'lightgrey' : 'transparent', // Highlight the current page with grey background
+                        }}
+                        color='black'
                     >
                         {page.title}
                     </Link>

@@ -43,7 +43,7 @@ const Editor = () => {
         handleDrawerClose={handleDrawerClose}
         handleDrawerOpen={handleDrawerOpen}
       />
-      <Box height={40}></Box>
+      <Box height={60}></Box>
       <Outlet/>
     </Main>
   );
